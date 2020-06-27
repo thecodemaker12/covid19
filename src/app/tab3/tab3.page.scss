@@ -1,0 +1,58 @@
+.searchinput{
+    border-radius: 50px;
+    width: 80%;
+    margin: auto;
+    height: 30px;
+    font-size: 12px;
+    ion-input{
+        margin-top: -12px;
+    }
+    ion-label{
+        margin-top: 0px;
+    }
+}
+.tete {
+  float: left;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+.updated {
+  font-size: 12px;
+  .update {
+    text-transform: capitalize;
+  }
+}
+.country {
+  padding: 8px;
+  margin: 10px 0px;
+  border-radius: 4px;
+  border: 1px solid #efefef;
+  img{
+    width: 42px;
+    float: left;
+  }
+  .data {
+    margin-left: 50px;
+    font-size: 12px;
+    .name {
+      font-weight: bolder;
+    }
+    .infos {
+      margin-top: 0px;
+      .separator {
+        margin: 10px;
+      }
+      .recovered {
+        color: green;
+      }
+      .confirmed {
+        color: red;
+      }
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .country{
+    border: 1px solid #2c2c2c;
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "HOME": {
+    "tabOne": "Home",
+    "tabTwo": "Symptoms",
+    "tabThree": "Global",
+    "tabFour": "Parameters",
+    "confirmed": "Confirmed",
+    "recovered": "Recovered",
+    "deaths": "Deaths",
+    "active": "Under treatment",
+    "diagramTitle": "Evolution of confirmed cases",
+    "global": "Global",
+    "topCountries": "Tops Countries",
+    "seeMore": "See more"
+  },
+  "SYMPTOMS": {
+    "title": "Symptoms & Prevention",
+    "paragraphOne": "Coronavirus disease 2019 (COVID-19) is characterized by mild symptoms including sore throat, cough, and fever. It can be more severe in some people and may cause pneumonia or difficulty breathing. ",
+    "paragraphTwo": "More rarely, the disease can be fatal. The elderly, and people with other medical conditions (eg asthma, diabetes, or heart disease), may be more vulnerable and become seriously ill . ",
+    "symptoms": "Symptoms",
+    "prevention": "Prevention",
+    "throat": "Sore throat",
+    "cough": "Cough",
+    "fever": "Fever",
+    "shortness": "Breathing difficulties (severe cases)",
+    "preventionNameOne": "Stay at home",
+    "preventionDescriptionOne": "Stay home to help prevent the spread of viruses.",
+    "preventionNameTwo": "Keep a distance",
+    "preventionDescriptionTwo": "Keep a distance of at least 1 meter from other people, especially if they cough, sneeze or have a fever.",
+    "preventionNameThree": "Wash yourself",
+    "preventionDescriptionThree": "Wash your hands frequently with a hydroalcoholic product or with soap and water.",
+    "preventionNameFour": "Cover up",
+    "preventionDescriptionFour": "Cover your nose and mouth with a tissue or the crook of your elbow when you cough or sneeze.",
+    "preventionNameFive": "Are you sick?",
+    "preventionDescriptionFive": "Call your doctor. In any case, you should not go to the hospital, so as not to overload the medical teams and not to risk transmitting the virus."
+  },
+  "ALL": {
+    "lastUpdate": "Last update",
+    "confirmed": "Confirmed",
+    "recovered": "Recovered",
+    "loading": "Loading data ...",
+    "placeholder": "Search for a country?"
+  },
+  "COUNTRIES": {
+    "placeholder": "Search for a country?",
+    "message": "Confirm this choice of country: {{ country }} ?",
+    "textCancel": "Cancel",
+    "textValidate": "Validate",
+    "nodata": "No data available for this country"
+  },
+  "PARAMETERS": {
+    "title": "Parameters",
+    "language": "CHOSE OF LANGUAGE",
+    "french": "French",
+    "english": "English",
+    "defaultCountry": "DEFAULT COUNTRY"
+  }
+}

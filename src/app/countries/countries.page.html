@@ -1,0 +1,22 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-item class="searchinput">
+      <ion-label><ion-icon name="search"></ion-icon></ion-label>
+      <ion-input type="text" placeholder="{{ 'COUNTRIES.placeholder' | translate }}" (keyup)="filter($event)"></ion-input>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let country of countries" class="countrie" (click)="choseCountry(country)">
+       <img *ngIf="country?.iso2"  [src]="countrieFlagUrl+country?.iso2+'.svg'" [alt]="country?.iso2">
+      <ion-label>{{ country?.name }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,58 @@
+{
+  "HOME": {
+    "tabOne": "Accueil",
+    "tabTwo": "Symptômes",
+    "tabThree": "Mondial",
+    "tabFour": "Paramètres",
+    "confirmed": "Confirmés",
+    "recovered": "Guéris",
+    "deaths": "Morts",
+    "active": "Sous traitement",
+    "diagramTitle": "Évolution des cas confirmés",
+    "global": "Mondial",
+    "topCountries": "Tops pays",
+    "seeMore": "Voir plus"
+  },
+  "SYMPTOMS": {
+    "title": "Symtômes & Prévention",
+    "paragraphOne": "La maladie à coronavirus 2019 (COVID-19) se caractérise par des symptômes bénins parmi esquels un mal de gorge, de la toux, et de la fièvre. L'atteinte peut être plus sévère chez certaines personnes et peut entraîner une pneumonie ou des difficultés respiratoires.",
+    "paragraphTwo": "Plus rarement, la maladie peut être mortelle. Les personnes âgées, et les personnes qui présentent d'autres problèmes médicaux (p. ex. asthme, diabète, ou maladie cardiaque), peuvent être plus vulnérables et tomber gravement malades.",
+    "symptoms": "Symptômes",
+    "prevention": "Prévention",
+    "throat": "Mal de gorge",
+    "cough": "Toux",
+    "fever": "Fièvre",
+    "shortness": "Difficultés respiratoires (cas sévères)",
+    "preventionNameOne": "Restez chez vous",
+    "preventionDescriptionOne": "Restez chez vous pour permettre d’éviter la propagation des virus.",
+    "preventionNameTwo": "Gardez une distance",
+    "preventionDescriptionTwo": "Gardez une distance d’au moins 1 mètre avec les autres personnes, en particulier si elles toussent, éternuent ou ont de la fièvre.",
+    "preventionNameThree": "Lavez-vous",
+    "preventionDescriptionThree": "Lavez-vous fréquemment les mains avec un produit hydroalcoolique ou à l'eau et au savon.",
+    "preventionNameFour": "Couvrez-vous",
+    "preventionDescriptionFour": "Couvrez-vous le nez et la bouche avec un mouchoir ou le creux du coude quand vous toussez ou éternuez.",
+    "preventionNameFive": "Vous êtes malade?",
+    "preventionDescriptionFive": "Appelez votre médecin. En tout état de cause, il ne faut pas se rendre à l’hôpital, pour ne pas surcharger les équipes médicales et ne pas risquer de transmettre le virus."
+  },
+  "ALL": {
+    "lastUpdate": "Dernière mise à jour",
+    "confirmed": "Confirmés",
+    "recovered": "Guéris",
+    "loading": "Chargement de données...",
+    "placeholder": "Rechercher un pays ?"
+  },
+  "COUNTRIES": {
+    "placeholder": "Rechercher un pays ?",
+    "message": "Confirmez vous ce choix de pays: {{ country }} ?",
+    "textCancel": "Annuler",
+    "textValidate": "Valider",
+    "nodata": "Pas de données disponibles pour ce pays"
+  },
+  "PARAMETERS": {
+    "title": "Paramètres",
+    "language": "CHOIX DE LANGUE",
+    "french": "Français",
+    "english": "Anglais",
+    "defaultCountry": "PAYS PAR DEFAUT"
+  }
+}

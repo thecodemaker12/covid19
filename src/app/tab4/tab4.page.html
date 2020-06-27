@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <div class="tete">
+      <img src="../../assets/icon/virus.png" alt="covid19">
+    </div>
+    <ion-title>
+      {{ 'PARAMETERS.title' | translate }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="ion-padding">
+  <ion-list>
+    <ion-radio-group [value]="selected">
+
+      <ion-item-divider lines="none" class="head">
+        <ion-icon name="language"></ion-icon>&nbsp; {{ 'PARAMETERS.language' | translate }}
+      </ion-item-divider>
+
+      <ion-item class="parameter">
+        <ion-label>
+          <img src="../../assets/icon/fr.svg" alt="fr">
+          {{ 'PARAMETERS.french' | translate }}
+        </ion-label>
+        <ion-radio (click)="choseLanguage('fr')" value="fr" mode="ios" ></ion-radio>
+      </ion-item>
+      <ion-item class="parameter">
+        <ion-label>
+          <img src="../../assets/icon/en.svg" alt="en">
+          {{ 'PARAMETERS.english' | translate }}
+        </ion-label>
+        <ion-radio (click)="choseLanguage('en')" value="en" mode="ios" ></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <ion-item-divider lines="none" class="head">
+      <ion-icon name="locate"></ion-icon>&nbsp; {{ 'PARAMETERS.defaultCountry' | translate }}
+    </ion-item-divider>
+    <ion-item class="parameter" (click)="goSetDefaultCountrie()">
+      <ion-label>
+        <img *ngIf="code" [src]="countrieFlagUrl+code+'.svg'" [alt]="code">
+        {{ country?.name }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

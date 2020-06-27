@@ -1,0 +1,153 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <div class="tete">
+      <img src="../../assets/icon/virus.png" alt="covid19">
+      <div class="name">COVID19</div>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button (click)="goSetDefaultCountrie()">
+        <ion-icon name="bookmark"></ion-icon> {{ code }}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-down"
+      refreshingSpinner="bubbles">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="title">
+    <img *ngIf="code" [src]="countrieFlagUrl+code+'.svg'" [alt]="code">
+    {{ countrie?.name }} <span class="updated"> ({{ formatDate(countrieData?.lastUpdate) }})</span>
+  </div>
+  <div class="slide-transaction-recente">
+      <ion-slides class="menu-transaction" [options]="slideOpts">
+        <ion-slide class="elm-transaction">
+          <div class="transaction-recente confirmed">
+            <div class="detail-tansaction">
+              <span class="tans_name">{{ 'HOME.confirmed' | translate }}</span><br/>
+              <span class="mnt_trans"></span><br/>
+              <ion-spinner *ngIf="!confirmed"  name="lines-small"></ion-spinner>
+              <span class="dest_trans">{{ countrieData?.confirmed | number }}</span>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide class="elm-transaction">
+          <div class="transaction-recente recovered">
+            <div class="detail-tansaction">
+              <span class="tans_name">{{ 'HOME.recovered' | translate }}</span><br/>
+              <span class="mnt_trans"></span><br/>
+              <ion-spinner *ngIf="!recovered"  name="lines-small"></ion-spinner>
+              <span class="dest_trans">{{ countrieData?.recovered | number }}</span>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide class="elm-transaction">
+          <div class="transaction-recente deaths">
+            <div class="detail-tansaction">
+              <span class="tans_name">{{ 'HOME.deaths' | translate }}</span><br/>
+              <span class="mnt_trans"></span><br/>
+              <ion-spinner *ngIf="!deaths"  name="lines-small"></ion-spinner>
+              <span class="dest_trans">{{ countrieData?.deaths | number }}</span>
+            </div>
+          </div>
+        </ion-slide>
+         <ion-slide class="elm-transaction">
+          <div class="transaction-recente current">
+            <div class="detail-tansaction">
+              <span class="tans_name">{{ 'HOME.active' | translate }}</span><br/>
+              <span class="mnt_trans"></span><br/>
+              <ion-spinner *ngIf="!current"  name="lines-small"></ion-spinner>
+              <span class="dest_trans">{{ countrieData?.active | number }}</span>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+  </div>
+
+  <div class="chart-content">
+    <div class="title">
+       <img *ngIf="code" [src]="countrieFlagUrl+code+'.svg'" [alt]="code">
+    {{ countrie?.name }}
+    </div>
+    <canvas #barChart></canvas>
+  </div>
+
+  <div class="title"><ion-icon name="globe">
+    </ion-icon> {{ 'HOME.global' | translate }} <span class="updated"> ({{ formatDate(lastUpdate) }})</span>
+  </div>
+  <div class="slide-transaction-recente">
+      <ion-slides class="menu-transaction" [options]="slideOpts">
+        <ion-slide class="elm-transaction">
+          <div class="transaction-recente confirmed">
+            <div class="detail-tansaction">
+              <span class="tans_name">{{ 'HOME.confirmed' | translate }}</span><br/>
+              <span class="mnt_trans"></span><br/>
+              <ion-spinner *ngIf="!confirmed"  name="lines-small"></ion-spinner>
+              <span class="dest_trans">{{ confirmed | number }}</span>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide class="elm-transaction">
+          <div class="transaction-recente recovered">
+            <div class="detail-tansaction">
+              <span class="tans_name">{{ 'HOME.recovered' | translate }}</span><br/>
+              <span class="mnt_trans"></span><br/>
+              <ion-spinner *ngIf="!recovered"  name="lines-small"></ion-spinner>
+              <span class="dest_trans">{{ recovered | number }}</span>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide class="elm-transaction">
+          <div class="transaction-recente deaths">
+            <div class="detail-tansaction">
+              <span class="tans_name">{{ 'HOME.deaths' | translate }}</span><br/>
+              <span class="mnt_trans"></span><br/>
+              <ion-spinner *ngIf="!deaths"  name="lines-small"></ion-spinner>
+              <span class="dest_trans">{{ deaths | number }}</span>
+            </div>
+          </div>
+        </ion-slide>
+        <ion-slide class="elm-transaction">
+          <div class="transaction-recente current">
+            <div class="detail-tansaction">
+              <span class="tans_name">{{ 'HOME.active' | translate }}</span><br/>
+              <span class="mnt_trans"></span><br/>
+              <ion-spinner *ngIf="!current"  name="lines-small"></ion-spinner>
+              <span class="dest_trans">{{ current | number }}</span>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+  </div>
+
+  <div class="title">
+    <ion-icon name="bar-chart"></ion-icon> {{ 'HOME.topCountries' | translate }} 
+    <span (click)="voirPlus()" class="voirplus">
+        {{ 'HOME.seeMore' | translate }} <ion-icon name="chevron-forward"></ion-icon>
+    </span>
+      
+  </div>
+  <div class="slide-transaction-recente">
+      <ion-slides class="menu-transaction" [options]="slideOpts2">
+        <ion-slide class="elm-transaction" *ngFor="let countrie of topCountries" >
+          <div class="transaction-recente topper">
+            <div class="detail-tansaction">
+              <span class="tans_name">
+                {{ countrie?.combinedKey }}<br>
+                <img *ngIf="countrie?.iso2" [src]="countrieFlagUrl+countrie?.iso2+'.svg'" [alt]="countrie?.iso2">
+              </span><br/>
+              <ion-spinner *ngIf="!countrie"  name="lines-small"></ion-spinner>
+              <span class="dest_trans">{{ countrie?.confirmed | number }}</span>
+            </div>
+          </div>
+        </ion-slide>
+      </ion-slides>
+  </div>
+
+</ion-content>
