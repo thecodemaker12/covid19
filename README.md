@@ -3,4 +3,4 @@
 
 - l'acceuil
 
-![img](images/home_dark.png) ![img](images/home_light.png)
+![img](images/home_dark.PNG) ![img](images/home_light.PNG)
