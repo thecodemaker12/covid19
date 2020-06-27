@@ -1,0 +1,47 @@
+.tete {
+  float: left;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+p, li {
+  font-size: 14px;
+}
+h4 {
+  font-size: 16px;
+}
+
+.consign {
+  padding: 8px;
+  contain: content;
+  margin: 10px 0px;
+  border-radius: 4px;
+  border: 1px solid #efefef;
+  img {
+    width: 90px;
+    float: left;
+    border-radius: 8px;
+    margin-right: 6px;
+  }
+  .image {
+    border-radius: 50px;
+    width: 45px;
+  }
+  .data {
+    .name {
+      font-weight: bolder;
+    }
+    .infos {
+      margin-top: 6px;
+      font-size: 14px;
+    }
+    .symptom {
+      margin: 15px;
+      font-size: 14px;
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .consign{
+    border: 1px solid #2c2c2c;
+  }
+}

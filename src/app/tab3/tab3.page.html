@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="primary">
+    <div class="tete">
+      <img src="../../assets/icon/virus.png" alt="covid19">
+    </div>
+   <ion-item class="searchinput">
+      <ion-label><ion-icon name="search"></ion-icon></ion-label>
+      <ion-input type="text" placeholder="{{ 'ALL.placeholder' | translate }}" (keyup)="filter($event)"></ion-input>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="updated">{{ 'ALL.lastUpdate' | translate }}  |  <span class="update">{{ formatDate(lastUpdated) }}</span></div>
+  <div class="country" *ngFor="let country of countries" >
+     <img *ngIf="country?.iso2"  [src]="countrieFlagUrl+country?.iso2+'.svg'" [alt]="country?.iso2">
+     <div class="data">
+       <div class="name"> {{ country?.combinedKey }} </div>
+       <div class="infos">
+         {{ 'ALL.confirmed' | translate }} - <span class="confirmed">{{ country?.confirmed | number }}</span>
+         <span class="separator">|</span>
+         {{ 'ALL.recovered' | translate }} - <span class="recovered">{{ country?.recovered | number }}</span>
+       </div>
+     </div>
+  </div>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="dots"
+      loadingText="{{ 'ALL.loading' | translate }}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="ScrollToTop()">
+    <ion-fab-button color="primary">
+      <ion-icon name="arrow-up-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
