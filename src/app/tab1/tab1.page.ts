@@ -170,8 +170,6 @@ export class Tab1Page {
         }
         this.topCountries = countries;
       });
-
-      // this.createBarChart('Senegal');
     });
   }
 
